@@ -8,9 +8,6 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class BaseService {
 
-    apiUrl: string = 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
-    apiUrl1: string = 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json';
-
     constructor (
 
         private http: Http
@@ -18,9 +15,10 @@ export class BaseService {
 
     }
 
-    getApi(): Observable<any> {
+    getApi(apiUrl): Observable<any> {
+        console.log('api URL: ', apiUrl);
         let result$ = this.http
-            .get(`${this.apiUrl}`, {headers: this.getHeaders()})
+            .get(`${apiUrl}`, {headers: this.getHeaders()})
             .map(res => res.json())
             .catch(res => Observable.throw(res))
             return result$

@@ -8,6 +8,9 @@ import { WindowRef, BaseService } from './core/index';
 })
 export class SearchComponent {
 
+    // Variables
+    searchString: string = '';
+    apiUrl;
 
     constructor (
 
@@ -16,6 +19,12 @@ export class SearchComponent {
     ) {
 
     }
+
+    onEnter(value: string) {
+        this.searchString = value;
+        console.log('SEARCH STRING', this.searchString);
+        this.callWikiApi()
+    }
     
     openRandomArticle() {
 
@@ -23,7 +32,14 @@ export class SearchComponent {
     }
 
     callWikiApi() {
-      this.baseService.getApi()
-        .subscribe(p => console.log('PPPP', p[0].title))
+
+        // build the search query
+        this.apiUrl = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${this.searchString}`;
+
+        // search only if there is some query
+        if (this.searchString) {
+            this.baseService.getApi(this.apiUrl)
+                .subscribe(p => console.log('PPPP', p))
+        }
     }
 }

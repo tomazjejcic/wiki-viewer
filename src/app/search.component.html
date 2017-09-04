@@ -1,7 +1,9 @@
 <button (click)="openRandomArticle()">
     Random article
 </button>
-    
-<button (click)="callWikiApi()">
-    API Call
-</button>
+
+<div>
+    <input #box (keyup.enter)="onEnter(box.value)">
+    <p>{{ values }}</p>
+    <button (click)="onEnter(box.value)">Search</button>
+</div>

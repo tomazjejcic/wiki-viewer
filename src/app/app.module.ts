@@ -7,11 +7,13 @@ import { BaseService } from './core/index';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search.component';
+import { ResultsComponent } from './results.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        SearchComponent
+        SearchComponent,
+        ResultsComponent
     ],
     imports: [
         BrowserModule,
