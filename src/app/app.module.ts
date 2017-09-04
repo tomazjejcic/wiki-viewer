@@ -6,10 +6,12 @@ import { WindowRef } from './core/index';
 import { BaseService } from './core/index';
 
 import { AppComponent } from './app.component';
+import { SearchComponent } from './search.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        SearchComponent
     ],
     imports: [
         BrowserModule,
