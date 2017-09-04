@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WindowRef } from './core/index';
+import { WindowRef, BaseService } from './core/index';
 
 declare var window: any
 
@@ -13,7 +13,8 @@ export class AppComponent {
 
     constructor (
 
-        private winRef: WindowRef
+        private winRef: WindowRef,
+        private baseService: BaseService
     ) {
 
     }
@@ -21,5 +22,10 @@ export class AppComponent {
     openRandomArticle() {
 
         this.winRef.nativeWindow.open('https://en.wikipedia.org/wiki/Special:Random');
+    }
+
+    callWikiApi() {
+      this.baseService.getApi()
+        .subscribe(p => console.log('PPPP', p[0].title))
     }
 }
