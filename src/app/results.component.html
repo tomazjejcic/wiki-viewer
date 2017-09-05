@@ -1,1 +1,9 @@
-<p>Display results</p>
+<div>
+    <p>Display results</p>
+</div>
+
+<div *ngIf="receivedApiData">
+    {{ receivedApiData[0]}}
+    {{ receivedApiData[1][0]}}
+    {{ receivedApiData[1][1]}}
+</div>

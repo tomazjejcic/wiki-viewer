@@ -18,8 +18,9 @@ export class BaseService {
     getApi(apiUrl): Observable<any> {
         console.log('api URL: ', apiUrl);
         let result$ = this.http
-            .get(`${apiUrl}`, {headers: this.getHeaders()})
+            .get(apiUrl, {headers: this.getHeaders()})
             .map(res => res.json())
+            // TODO: improve error handling
             .catch(res => Observable.throw(res))
             return result$
     }

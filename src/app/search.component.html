@@ -7,3 +7,6 @@
     <p>{{ values }}</p>
     <button (click)="onEnter(box.value)">Search</button>
 </div>
+
+<app-results [receivedApiData]="apiResult">
+</app-results>

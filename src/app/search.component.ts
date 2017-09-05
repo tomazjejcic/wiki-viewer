@@ -11,6 +11,7 @@ export class SearchComponent {
     // Variables
     searchString: string = '';
     apiUrl;
+    apiResult;
 
     constructor (
 
@@ -39,7 +40,11 @@ export class SearchComponent {
         // search only if there is some query
         if (this.searchString) {
             this.baseService.getApi(this.apiUrl)
-                .subscribe(p => console.log('PPPP', p))
+                .subscribe(data => {
+                    console.log('PPPP', data);
+                    this.apiResult = data;
+                })
+                // TODO: improve error handling
         }
     }
 }
