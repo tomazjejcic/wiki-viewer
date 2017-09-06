@@ -42,9 +42,38 @@ export class SearchComponent {
             this.baseService.getApi(this.apiUrl)
                 .subscribe(data => {
                     console.log('PPPP', data);
-                    this.apiResult = data;
+                    this.buildListObject(data);
                 })
                 // TODO: improve error handling
         }
+    }
+
+    // manipulate the api result into a more useful object
+    buildListObject(data) {
+
+        let listObject = {
+            title: undefined,
+            listArray: []
+        }
+
+        listObject.title = data[0];
+        data.shift()
+        // console.log('REDUCED ARRAY', data);
+        // console.log('LIST OBJECT', listObject);
+
+        for (let i = 0; i < data[0].length; i++) {
+
+            const obj = {
+                title: data[0][i],
+                description: data[1][i],
+                link: data[2][i],
+            }
+
+            listObject.listArray.push(obj);
+        }
+
+        this.apiResult = listObject;
+        // console.log('THE ARRRAYYYY', listObject);
+        // console.log('AAPI RESSS ', this.apiResult);
     }
 }

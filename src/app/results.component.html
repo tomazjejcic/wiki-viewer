@@ -3,7 +3,11 @@
 </div>
 
 <div *ngIf="receivedApiData">
-    {{ receivedApiData[0]}}
-    {{ receivedApiData[1][0]}}
-    {{ receivedApiData[1][1]}}
+
+        <div *ngFor="let item of receivedApiData.listArray">
+            <p>{{ item.title }}</p>
+            <p>{{ item.description }}</p>
+            <p>{{ item.link }}</p>
+        </div>
+    
 </div>
