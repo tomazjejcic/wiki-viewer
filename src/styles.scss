@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+$color-primary: #CDDFF2;
+$color-secondary: #274c73;
+$color-action: #F77F00;
+$color-item: #7e9ab7;
+$color-input: #044767;
+$color-placeholder: #7E7D7D;
+$color-description-text: #270303;
+
+body {
+    background: $color-primary;
+    height: 100vh;
+    margin: 0px;
+}

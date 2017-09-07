@@ -1,0 +1,54 @@
+@import "../styles";
+
+.results-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: 0;
+
+    .list-container {
+        position: absolute;
+        overflow: auto;
+        margin: 10px 0 90px 10px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+
+        .list {
+            padding-right: 10px;
+            
+            .item {
+                background: $color-item;
+                width: 100%;
+                margin-top: 12px;
+                border-radius: 5px;
+
+                .item-title {
+                    color: $color-primary;
+                    padding: 10px 10px 5px 10px;
+                    font-size: 18px;
+                    
+                }
+                
+                .item-description {
+                    color: $color-description-text;
+                    padding: 5px 10px 10px 10px;
+                    font-size: 16px;
+                }
+                
+                .more-button {
+                    background: $color-secondary;
+                    color: $color-action;
+                    display: inline-flex;
+                    height: 30px;
+                    width: stretch;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 10px 10px 10px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

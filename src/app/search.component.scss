@@ -1,0 +1,70 @@
+@import "../styles";
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .search-container {
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+
+        .search-input-container {
+            background: $color-primary;
+            flex: 1;
+
+            input {
+                background: $color-primary;
+                color: $color-input;
+                height: stretch;
+                width: stretch;
+                border: 0px;
+                margin-left: 10px;
+                outline: none;
+                font-size: 20px;
+                font-family: sans-serif;
+            }
+
+            input::placeholder {
+                color: $color-placeholder;
+            }
+        }
+
+        .search-button-container {
+            background: $color-primary;
+
+            button {
+                width: 60px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 25px;
+
+                i {
+                    color: $color-action;
+                }
+            }
+        }
+    }
+
+    .random-container {
+        height: 40px;
+        background: $color-secondary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            color: $color-action;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 13px;
+
+        }
+    }
+
+    .results-component {
+        flex: 1;
+    }
+}

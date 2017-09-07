@@ -1,13 +1,18 @@
-<div>
-    <p>Display results</p>
-</div>
+<div class="results-container" *ngIf="receivedApiData">
 
-<div *ngIf="receivedApiData">
+    <div class="list-container">
+        <div class="list" *ngFor="let item of receivedApiData.listArray">
 
-        <div *ngFor="let item of receivedApiData.listArray">
-            <p>{{ item.title }}</p>
-            <p>{{ item.description }}</p>
-            <p>{{ item.link }}</p>
+            <div class="item">
+                <div class="item-title">{{ item.title }}</div>
+                <div class="item-description">{{ item.description }}</div>
+                <!-- <p>{{ item.link }}</p> -->
+                <div class="more-button">
+                    more
+                </div>
+            </div>
+
         </div>
-    
+    </div>    
+
 </div>
