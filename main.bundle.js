@@ -373,7 +373,7 @@ var SearchComponent = (function () {
     SearchComponent.prototype.callWikiApi = function () {
         var _this = this;
         // build the search query
-        this.apiUrl = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + this.searchString;
+        this.apiUrl = "https://en.wikipedia.org/w/api.php?action=opensearch&origin=*&search=" + this.searchString;
         // search only if there is some query
         if (this.searchString) {
             this.baseService.getApi(this.apiUrl)
