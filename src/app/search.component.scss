@@ -35,10 +35,13 @@
             background: $color-primary;
 
             button {
+                background-color: transparent;
                 width: 60px;
                 height: 100%;
                 display: flex;
                 justify-content: center;
+                outline: none;
+                border-width: 0px;
                 font-size: 25px;
 
                 i {
@@ -57,7 +60,10 @@
 
         button {
             color: $color-action;
+            background-color: transparent;
+            border-width: 0px;
             cursor: pointer;
+            outline: none;
             font-family: sans-serif;
             font-size: 13px;
 
@@ -66,5 +72,77 @@
 
     .results-component {
         flex: 1;
+    }
+}
+
+@media(min-width:768px) {
+
+    .container {
+
+        .navbar {
+            display: flex;
+            flex-direction: row-reverse;
+    
+            .search-container {
+                height: 80px;
+                flex: 5;
+
+                .search-input-container {
+                    background: $color-search-md;
+
+                    input {
+                        background: $color-search-md;
+                        margin-left: 20px;
+                        font-size: 30px
+                    }
+
+                }
+                
+                .search-button-container {
+                    background: $color-search-md;
+
+                    button {
+                        margin-right: 20px;
+                        font-size: 30px
+                    }
+                }
+            }
+
+            .random-container {
+                flex: 2;
+                height: 80px;
+
+                button {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:993px) {
+
+    .container {
+        
+        .navbar {
+    
+            .search-container {
+                
+                .search-button-container {
+
+                    button {
+                        margin-right: 70px;
+                    }
+                }
+            }
+
+            .random-container {
+                justify-content: flex-end;
+
+                button {
+                    margin-right: 20px;
+                }
+            }
+        }   
     }
 }
