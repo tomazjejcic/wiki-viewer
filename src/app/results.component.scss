@@ -27,6 +27,9 @@
                 .item-title {
                     color: $color-primary;
                     padding: 10px 10px 5px 10px;
+                    font-family: $font-title;
+                    line-height: 1.5;
+                    font-weight: 300;
                     font-size: 18px;
                     
                 }
@@ -34,6 +37,9 @@
                 .item-description {
                     color: $color-description-text;
                     padding: 5px 10px 10px 10px;
+                    font-family: $font-description;
+                    line-height: 1.3;
+                    font-weight: 300;
                     font-size: 16px;
                 }
                 
@@ -45,9 +51,12 @@
                     width: stretch;
                     justify-content: center;
                     align-items: center;
+                    cursor: pointer;
                     margin: 0 10px 10px 10px;
                     border-radius: 5px;
-                    font-size: 16px;
+                    font-size: 12px;
+                    font-weight: 200;
+                    font-family: $font-title;
                 }
             }
         }
@@ -68,7 +77,6 @@
                     .item-title {
                         padding: 20px 20px 5px 20px;
                         font-size: 20px;
-                        
                     }
                     
                     .item-description {
@@ -79,7 +87,7 @@
                     .more-button {
                         height: 40px;
                         margin: 0 20px 20px 20px;
-                        font-size: 18px;
+                        font-size: 14px;
                     }
                 }
             }

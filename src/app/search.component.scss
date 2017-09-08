@@ -41,6 +41,7 @@
                 display: flex;
                 justify-content: center;
                 outline: none;
+                cursor: pointer;
                 border-width: 0px;
                 font-size: 25px;
 
@@ -61,11 +62,12 @@
         button {
             color: $color-action;
             background-color: transparent;
-            border-width: 0px;
             cursor: pointer;
             outline: none;
-            font-family: sans-serif;
-            font-size: 13px;
+            border-width: 0px;
+            font-family: $font-title;
+            font-weight: 200;
+            font-size: 14px;
 
         }
     }

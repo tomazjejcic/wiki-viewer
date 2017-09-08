@@ -59,8 +59,6 @@ export class SearchComponent {
 
         listObject.title = data[0];
         data.shift()
-        // console.log('REDUCED ARRAY', data);
-        // console.log('LIST OBJECT', listObject);
 
         for (let i = 0; i < data[0].length; i++) {
 
@@ -74,7 +72,5 @@ export class SearchComponent {
         }
 
         this.apiResult = listObject;
-        // console.log('THE ARRRAYYYY', listObject);
-        // console.log('AAPI RESSS ', this.apiResult);
     }
 }
