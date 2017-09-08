@@ -12,6 +12,7 @@ export class SearchComponent {
     searchString: string = '';
     apiUrl;
     apiResult;
+    errorMessage;
 
     constructor (
 
@@ -23,7 +24,6 @@ export class SearchComponent {
 
     onEnter(value: string) {
         this.searchString = value;
-        console.log('SEARCH STRING', this.searchString);
         this.callWikiApi()
     }
     
@@ -40,11 +40,12 @@ export class SearchComponent {
         // search only if there is some query
         if (this.searchString) {
             this.baseService.getApi(this.apiUrl)
-                .subscribe(data => {
-                    console.log('PPPP', data);
-                    this.buildListObject(data);
-                })
-                // TODO: improve error handling
+                .subscribe(
+                    data => {
+                        this.buildListObject(data);
+                    },
+                    error => this.errorMessage = error
+                )
         }
     }
 

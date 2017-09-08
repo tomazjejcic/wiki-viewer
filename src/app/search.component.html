@@ -4,7 +4,6 @@
         <div class="search-container">
             <div class="search-input-container">
                 <input #box (keyup.enter)="onEnter(box.value)" type="text" placeholder="Search Wikipedia">
-                <!-- <p>{{ values }}</p> -->
             </div>
             <div class="search-button-container">
                 <button (click)="onEnter(box.value)">
@@ -19,6 +18,11 @@
             </button>
         </div>
     </div>
+
+    <!-- error handling -->
+    <section *ngIf="errorMessage">
+            {{errorMessage}}
+    </section>
 
     <app-results class="results-component" [receivedApiData]="apiResult">
     </app-results>

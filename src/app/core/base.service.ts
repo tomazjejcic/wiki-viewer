@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 // import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class BaseService {
@@ -20,8 +21,7 @@ export class BaseService {
         let result$ = this.http
             .get(apiUrl, {headers: this.getHeaders()})
             .map(res => res.json())
-            // TODO: improve error handling
-            .catch(res => Observable.throw(res))
+            .catch(this.handleError)
             return result$
     }
 
@@ -30,4 +30,13 @@ export class BaseService {
         headers.append('Accept', 'application/json');
         return headers;
     }
+
+    handleError (error: any) {
+        // log error
+        let errorMsg = error.message || `Yikes! There was a problem with our hyperdrive device and we couldn't get data`
+        console.error(errorMsg);
+      
+        // throw an application level error
+        return Observable.throw(errorMsg);
+      }
 }
